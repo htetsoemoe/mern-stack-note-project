@@ -8,8 +8,9 @@ const asyncHandler = require('express-async-handler')
 const getAllNotes = asyncHandler(async (req, res) => {
     const notes = await Note.find().lean()
 
+    // If there is no notes in MongoDB, return status 400 => bad request
     if (!notes?.length) {
-        return res.status(400).json({ message: 'No notes found' })
+        return res.status(400).json({ message: 'No notes found!' })
     }
 
     // Add username to each note before sending the response 
