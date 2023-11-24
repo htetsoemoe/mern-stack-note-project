@@ -29,7 +29,7 @@ const getAllNotes = asyncHandler(async (req, res) => {
 // @access Private
 const createNewNote = asyncHandler(async (req, res) => {
     const { user, title, text } = req.body
-    // console.log(user, title, text);
+    console.log(user, title, text);
 
     if (!user || !title || !text) {
         return res.status(400).json({ message: 'All fields are required' })
@@ -44,6 +44,7 @@ const createNewNote = asyncHandler(async (req, res) => {
 
     // Create and store the note into mongodb with created user's id
     const note = await Note.create({ user, title, text })
+    console.log(note);
 
     if (note) {
         return res.status(201).json({ message: 'New note created' })
