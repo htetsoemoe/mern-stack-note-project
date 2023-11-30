@@ -11,7 +11,7 @@ const Welcome = () => {
     const content = (
         <section className="welcome">
             <p>{today}</p>
-            <h1>Welcome <span className="dash-footer__username__status">{username}</span></h1>
+            <h1>Welcome <span className="dash-footer__username__status">{username}</span>!</h1>
             <p><Link to='/dash/notes'>View techNotes</Link></p>
             <p><Link to='/dash/notes/new'>Add New techNotes</Link></p>
 
