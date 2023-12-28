@@ -36,7 +36,7 @@ const createNewNote = async (req, res) => {
     }
 
     // Check for duplicate title
-    const duplicate = await User.findOne({ username })
+    const duplicate = await User.findOne({ user })
         .collation({ locale: 'en', strength: 2 })
         .lean().exec()
 
@@ -74,7 +74,7 @@ const updateNote = async (req, res) => {
     }
 
     // Check for duplicate title
-    const duplicate = await User.findOne({ username })
+    const duplicate = await User.findOne({ user })
         .collation({ locale: 'en', strength: 2 })
         .lean().exec()
 
